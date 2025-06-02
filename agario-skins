@@ -1,0 +1,111 @@
+agario-skins/
+├── index.html
+├── style.css
+├── script.js
+├── skins/
+│   ├── doge.png
+│   ├── earth.png
+│   └── smiley.png
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agar.io Skins</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Agar.io Skins Galerij</h1>
+    <p>Download en bekijk skins voor Agar.io</p>
+  </header>
+
+  <main>
+    <section id="gallery">
+      <h2>Skins downloaden</h2>
+      <div class="skins">
+        <div class="skin">
+          <img src="skins/doge.png" alt="Doge skin" />
+          <a download href="skins/doge.png">Download</a>
+        </div>
+        <div class="skin">
+          <img src="skins/earth.png" alt="Earth skin" />
+          <a download href="skins/earth.png">Download</a>
+        </div>
+        <div class="skin">
+          <img src="skins/smiley.png" alt="Smiley skin" />
+          <a download href="skins/smiley.png">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="upload">
+      <h2>Upload een skin (alleen voorbeeld)</h2>
+      <form id="uploadForm">
+        <input type="file" accept="image/*" />
+        <button type="submit">Uploaden</button>
+      </form>
+      <p id="uploadStatus"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Agar.io Skins Hub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+header {
+  background: #2d89ef;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+.skins {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skin {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 150px;
+}
+
+.skin img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+footer {
+  background: #eee;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+document.getElementById("uploadForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("uploadStatus").textContent =
+    "Uploaden is niet beschikbaar op GitHub Pages.";
+});
+
